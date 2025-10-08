@@ -21,3 +21,31 @@ Before starting, make sure you have installed:
 ### 2️⃣ Clone the Repository
 ```bash
 git clone https://github.com/your_user/Digital-Nao-Challenge-4.git
+```
+
+---
+
+## 🧱 Repository structure
+
+```bash
+restaurant-database/
+│
+├── backup/
+│   └── restaurant/               # MongoDB dump (collections and indexes)
+│
+├── data/
+│   ├── restaurants.csv           # CSV file with restaurant data
+│   
+│
+├── scripts/
+│                                 # Script to import users
+│
+├── screenshots/
+│   ├── mongo_collections.png     # Screenshot showing collections in MongoDB
+│   ├── mongo_indexes.png         # Screenshot of created indexes
+│   └── mongo_data_preview.png    # Screenshot of data preview
+│
+├── schema/
+│   └── restaurant_schema.json   # JSON structure defining the data schema
+│
+└── README.md                     # Project documentation

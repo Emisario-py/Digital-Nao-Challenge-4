@@ -226,7 +226,7 @@ restaurant-database/
 │
 └── package.json
 
-restaurant-api/
+express-mongo-api/
 ├── src/
 │   ├── app.js
 │   ├── db.js

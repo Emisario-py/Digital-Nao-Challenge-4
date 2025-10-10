@@ -23,6 +23,24 @@ Before starting, make sure you have installed:
 git clone https://github.com/your_user/Digital-Nao-Challenge-4.git
 ```
 
+### 3️⃣ Install dependencies
+```bash
+cd restaurant-database
+npm install
+```
+
+In this directory you can use the next scripts to do actions with the database.
+
+---
+## 🧩 MongoDB Automation Scripts
+
+| **Command**          | **Description**                                                                                           | **Expected Result**                                                                        |
+| -------------------- | --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| 🏗️ `npm run setup`  | Creates and initializes the entire MongoDB database, including schema, data import, and index generation. | The `restaurants` collection is created, populated, and indexed successfully.              |
+| 🧱 `npm run schema`  | Builds the database collection with JSON Schema validation rules to ensure data integrity.                | The `restaurants` collection is created with validation constraints.                       |
+| 📥 `npm run import`  | Imports data from the CSV file and transforms it into structured MongoDB documents.                       | Records from `data/restaurants.csv` are successfully imported according to the schema.     |
+| 🧭 `npm run indexes` | Creates optimized indexes for faster query performance, including text, compound, and geospatial indexes. | Indexes are created on key fields (`name`, `borough`, `cuisine`, `address.coord`, etc.).   |
+| 💾 `npm run dump`    | Generates a full database backup (dump) and saves it in a timestamped folder.                             | A backup folder is created inside `/backup` containing `.bson` and `.metadata.json` files. |
 ---
 
 ## 🧱 Repository structure
@@ -31,21 +49,34 @@ git clone https://github.com/your_user/Digital-Nao-Challenge-4.git
 restaurant-database/
 │
 ├── backup/
-│   └── restaurant/               # MongoDB dump (collections and indexes)
+│   └── restaurant/
 │
 ├── data/
-│   ├── restaurants.csv           # CSV file with restaurant data
+│   └── restaurants.csv
 │   
 │
 ├── scripts/
-│                                 # Script to import users
+│  ├── backupDB.js 
+│  ├── createIndexes.js
+│  ├── createSchema.js
+│  └── importData.js
 │
 ├── screenshots/
-│   ├── mongo_collections.png     # Screenshot showing collections in MongoDB
-│   ├── mongo_indexes.png         # Screenshot of created indexes
-│   └── mongo_data_preview.png    # Screenshot of data preview
+│   ├── database_and_collection.png
+│   ├── mongo_documents.png
+│   └── mongo_indexes.png
 │
-├── schema/
-│   └── restaurant_schema.json   # JSON structure defining the data schema
+├── .env
 │
-└── README.md                     # Project documentation
+│
+├── .gitignore
+│
+│
+├── package-lock.json
+│
+│
+└── package.json
+
+README.md
+```
+

@@ -226,6 +226,27 @@ restaurant-database/
 │
 └── package.json
 
+restaurant-api/
+├── src/
+│   ├── app.js
+│   ├── db.js
+│   ├── routes/
+│   │   └── restaurants.routes.js
+│   ├── controllers/
+│   │   └── restaurants.controller.js
+│   ├── validators/
+│   │   └── restaurant.schema.js
+│   ├── middlewares/
+│   │   ├── validate.js
+│   │   └── error.js
+│   └── utils/
+│       └── asyncHandler.js
+├── .env
+│  
+├── .gitignore
+│  
+└── package.json
+
 README.md
 ```
 

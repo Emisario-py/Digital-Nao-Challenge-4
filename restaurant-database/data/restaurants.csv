@@ -1,0 +1,6 @@
+name,borough,cuisine,restaurant_id,building,street,zipcode,longitude,latitude,grade_date1,score1,grade_date2,score2,comment_date,comment
+Brunos On The Boulevard,Queens,American,40356151,8825,Astoria Boulevard,11369,-73.8803827,40.7643124,2014-11-15,4,2014-05-02,2,2014-11-15,I will definitely be back!
+Tasty House,Brooklyn,Chinese,40356152,60,Flatbush Avenue,11225,-73.958,40.662,2014-11-15,5,2014-05-02,3,2014-05-03,Good food and fast service
+El Cielo,Mazatlán,Mexican,40356153,12,Juárez,82000,-106.42,23.22,2024-11-15,4,2024-05-02,5,2024-11-16,Excelente comida y atención
+La Piazza,Manhattan,Italian,40356154,100,5th Avenue,10011,-73.989,40.741,2015-02-10,5,2014-09-21,4,2015-02-15,Great pasta and cozy place
+Sushi Express,Bronx,Japanese,40356155,230,Kingsbridge Road,10463,-73.899,40.878,2013-08-02,3,2012-11-20,4,2013-08-03,Fresh and tasty sushi

@@ -69,3 +69,63 @@ exports.remove = async (req, res) => {
   if (!result.deletedCount) return res.status(404).json({ message: "Restaurant not found" });
   res.status(204).send();
 };
+
+exports.getByCuisine = async (req, res) => {
+  const { cuisine } = req.params;
+  const { page = 1, limit = 10 } = req.query;
+  const col = getCollection();
+
+  const skip = (page - 1) * limit;
+
+  const filter = { cuisine: { $regex: new RegExp(cuisine, "i") } };
+
+  const [items, total] = await Promise.all([
+    col.find(filter).skip(skip).limit(Number(limit)).toArray(),
+    col.countDocuments(filter)
+  ]);
+
+  if (!items.length) {
+    return res.status(404).json({ message: `No restaurants found with cuisine: ${cuisine}` });
+  }
+
+  res.json({
+    total,
+    page: Number(page),
+    pages: Math.ceil(total / limit),
+    cuisine,
+    items
+  });
+};
+
+exports.getAllByRating = async (req, res) => {
+  const { page = 1, limit = 10 } = req.query;
+  const col = getCollection();
+  const skip = (page - 1) * limit;
+
+  const pipeline = [
+    {
+      $addFields: {
+        averageScore: {
+          $cond: [
+            { $gt: [{ $size: "$grades" }, 0] },
+            { $avg: "$grades.score" },
+            null
+          ]
+        }
+      }
+    },
+    { $sort: { averageScore: -1 } },
+    { $skip: skip },
+    { $limit: Number(limit) }
+  ];
+
+  const items = await col.aggregate(pipeline).toArray();
+  const total = await col.countDocuments();
+
+  res.json({
+    total,
+    page: Number(page),
+    pages: Math.ceil(total / limit),
+    items
+  });
+};

@@ -66,127 +66,198 @@ If you use postman you can create the coleccion of request to test the api by sa
 
 ```json
 {
-  "info": {
-    "_postman_id": "a7d2f65c-1db1-4c93-a0e5-7392f85a7d1e",
-    "name": "Restaurant API (MongoDB + Express)",
-    "description": "Postman collection for testing CRUD operations on the Restaurants API using Express.js and MongoDB.",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-  },
-  "item": [
-    {
-      "name": "Get All Restaurants",
-      "request": {
-        "method": "GET",
-        "header": [],
-        "url": {
-          "raw": "http://localhost:3000/api/restaurants?page=1&limit=5",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3000",
-          "path": ["api", "restaurants"],
-          "query": [
-            { "key": "page", "value": "1" },
-            { "key": "limit", "value": "5" }
-          ]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "Get Restaurant by ID",
-      "request": {
-        "method": "GET",
-        "header": [],
-        "url": {
-          "raw": "http://localhost:3000/api/restaurants/{{restaurant_id}}",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3000",
-          "path": ["api", "restaurants", "{{restaurant_id}}"]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "Create Restaurant",
-      "request": {
-        "method": "POST",
-        "header": [
-          { "key": "Content-Type", "value": "application/json" }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n    \"name\": \"Brunos On The Boulevard\",\n    \"borough\": \"Queens\",\n    \"cuisine\": \"American\",\n    \"restaurant_id\": \"40356151\",\n    \"address\": {\n        \"building\": \"8825\",\n        \"street\": \"Astoria Boulevard\",\n        \"zipcode\": \"11369\",\n        \"coord\": [-73.8803827, 40.7643124]\n    },\n    \"grades\": [\n        { \"date\": \"2014-11-15T00:00:00.000Z\", \"score\": 4 },\n        { \"date\": \"2014-05-02T00:00:00.000Z\", \"score\": 2 }\n    ],\n    \"comments\": [\n        {\n            \"date\": \"2014-11-15T00:00:00.000Z\",\n            \"comment\": \"I will definitely be back!\"\n        }\n    ]\n}"
-        },
-        "url": {
-          "raw": "http://localhost:3000/api/restaurants",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3000",
-          "path": ["api", "restaurants"]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "Update Restaurant (PUT)",
-      "request": {
-        "method": "PUT",
-        "header": [
-          { "key": "Content-Type", "value": "application/json" }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n    \"name\": \"Brunos Updated\",\n    \"borough\": \"Queens\",\n    \"cuisine\": \"American\",\n    \"restaurant_id\": \"40356151\",\n    \"address\": {\n        \"building\": \"8825\",\n        \"street\": \"Astoria Boulevard\",\n        \"zipcode\": \"11369\",\n        \"coord\": [-73.8803827, 40.7643124]\n    },\n    \"grades\": [\n        { \"date\": \"2014-11-15T00:00:00.000Z\", \"score\": 4 }\n    ],\n    \"comments\": [\n        {\n            \"date\": \"2014-11-15T00:00:00.000Z\",\n            \"comment\": \"Updated comment\"\n        }\n    ]\n}"
-        },
-        "url": {
-          "raw": "http://localhost:3000/api/restaurants/{{restaurant_id}}",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3000",
-          "path": ["api", "restaurants", "{{restaurant_id}}"]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "Delete Restaurant",
-      "request": {
-        "method": "DELETE",
-        "header": [],
-        "url": {
-          "raw": "http://localhost:3000/api/restaurants/{{restaurant_id}}",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3000",
-          "path": ["api", "restaurants", "{{restaurant_id}}"]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "Search Restaurants by Borough & Cuisine",
-      "request": {
-        "method": "GET",
-        "header": [],
-        "url": {
-          "raw": "http://localhost:3000/api/restaurants?borough=Queens&cuisine=American",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3000",
-          "path": ["api", "restaurants"],
-          "query": [
-            { "key": "borough", "value": "Queens" },
-            { "key": "cuisine", "value": "American" }
-          ]
-        }
-      },
-      "response": []
-    }
-  ],
-  "variable": [
-    { "key": "restaurant_id", "value": "40356151" }
-  ]
+	"info": {
+		"_postman_id": "fa421ba2-8c3b-4032-9801-e367cf643c94",
+		"name": "Restaurant API (MongoDB + Express)",
+		"description": "Postman collection for testing CRUD operations on the Restaurants API using Express.js and MongoDB.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44553130"
+	},
+	"item": [
+		{
+			"name": "Get All Restaurants",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/restaurants?page=1&limit=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"restaurants"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Restaurant",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/restaurants/{{restaurant_id}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"restaurants",
+						"{{restaurant_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Restaurant",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Brunos On The Boulevard\",\n    \"borough\": \"Queens\",\n    \"cuisine\": \"American\",\n    \"restaurant_id\": \"40356151\",\n    \"address\": {\n        \"building\": \"8825\",\n        \"street\": \"Astoria Boulevard\",\n        \"zipcode\": \"11369\",\n        \"coord\": [-73.8803827, 40.7643124]\n    },\n    \"grades\": [\n        { \"date\": \"2014-11-15T00:00:00.000Z\", \"score\": 4 },\n        { \"date\": \"2014-05-02T00:00:00.000Z\", \"score\": 2 }\n    ],\n    \"comments\": [\n        {\n            \"date\": \"2014-11-15T00:00:00.000Z\",\n            \"comment\": \"I will definitely be back!\"\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/restaurants",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"restaurants"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Restaurant by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/restaurants/{{restaurant_id}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"restaurants",
+						"{{restaurant_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Restaurant (PUT)",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Brunos Updated\",\n    \"borough\": \"Queens\",\n    \"cuisine\": \"American\",\n    \"restaurant_id\": \"40356151\",\n    \"address\": {\n        \"building\": \"8825\",\n        \"street\": \"Astoria Boulevard\",\n        \"zipcode\": \"11369\",\n        \"coord\": [-73.8803827, 40.7643124]\n    },\n    \"grades\": [\n        { \"date\": \"2014-11-15T00:00:00.000Z\", \"score\": 4 }\n    ],\n    \"comments\": [\n        {\n            \"date\": \"2014-11-15T00:00:00.000Z\",\n            \"comment\": \"Updated comment\"\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/restaurants/{{restaurant_id}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"restaurants",
+						"{{restaurant_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Restaurants by Borough & Cuisine",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/restaurants?borough=Queens&cuisine=American",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"restaurants"
+					],
+					"query": [
+						{
+							"key": "borough",
+							"value": "Queens"
+						},
+						{
+							"key": "cuisine",
+							"value": "American"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Restaurants by cuisine",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Get Restaurants by raiting",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "restaurant_id",
+			"value": "40356151"
+		}
+	]
 }
 
 ```

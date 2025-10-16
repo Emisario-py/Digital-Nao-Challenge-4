@@ -4,7 +4,7 @@
 **Tattler** is a restaurant directory database designed to store and manage restaurant information efficiently using **MongoDB**, a non-relational database that handles data in **JSON-like documents**.  
 This repository contains the **database configuration and setup** phase of the project. It includes the MongoDB dump, CSV import scripts, and documentation to easily restore or modify the database.
 
-The database aims to support a future RESTful API that will allow searching, filtering, rating, and commenting on restaurants through a web service built with **Express.js**.
+The database supports a RESTful API that enables users to search and filter on restaurants through a web service built with Express.js. Setup instructions are provided in this document.
 
 ---
 

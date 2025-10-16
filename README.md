@@ -320,4 +320,5 @@ express-mongo-api/
 
 README.md
 ```
-
+---
+### Version 1.1.0
